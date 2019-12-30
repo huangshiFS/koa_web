@@ -22,3 +22,7 @@ yarn i
 ```
 npm run dev
 ```
+设置环境变量
+```
+npm i cross-env -D
+```

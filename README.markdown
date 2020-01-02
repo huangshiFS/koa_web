@@ -26,3 +26,37 @@ npm run dev
 ```
 npm i cross-env -D
 ```
+
+#### ejs格式
+变量格式
+```
+<%= title %>
+```
+循环语句格式
+```
+<div>
+    <% if (isMe) { %>
+    <a href="#">@ 提到我的(3)</a>
+    <% } else { %>
+    <button>关注</button>
+    <% } %>
+</div>
+```
+组建化
+将小功能单独放在一个文件夹下，新建一个ejs文件，然后引用，引用需要传递两个值，引用路径，变量值(可能有多个)
+```
+将以下代码放入views/widgets/user-info.ejs中
+
+<div>
+    <% if (isMe) { %>
+    <a href="#">@ 提到我的(3)</a>
+    <% } else { %>
+    <button>关注</button>
+    <% } %>
+</div>
+
+然后在view/index.ejs中引用
+<%- include('widgets/user-info',{
+    isMe
+  })%>
+```
